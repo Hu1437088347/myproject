@@ -17,5 +17,5 @@ form_data={
     'keyfrom': 'fanyi.web',
     'action': 'FY_BY_REALTlME',
 }
-response=requests.post(url,form_data)
+response=requests.post(url,data=form_data)
 print(response.text)
