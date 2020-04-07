@@ -1,14 +1,23 @@
+import random
 import requests
+import time
 
 
 url="http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule"
 
 
 def get_salt():
-    return '15853783488690'
+    s=str(random.randint(0,10))
+    t=get_ts()
+    # print("random = ",s)
+    # print("ts= ",t)
+    # print("salt= ",t+s)
+    return  t+s
+    # return '15853783488690'
 
 
-def get_sing():
+
+def get_sign():
     return '6b9a6ce3ff157252d9a388c507e70474'
 
 
@@ -23,7 +32,7 @@ form_data={
     'smartresult': 'dict',
     'client': 'fanyideskweb',
     'salt': get_salt(),
-    'sign': get_sing(),
+    'sign': get_sign(),
     'ts': get_ts(),
     'bv': '70244e0061db49a9ee62d341c5fed82a',
     'doctype': 'json',
