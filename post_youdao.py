@@ -77,12 +77,12 @@ class Youdao():
 
     def fanyi(self):
         response = requests.post(self.url, data=self.yield_form_data(), headers=self.get_headers())
-        return response.text
+        import json
+        content=json.loads(response.text)
+        return content['translateResult'][0][0]['tgt']
 
 if __name__ == '__main__':
-        # print(form_data)
-        # print(get_headers())
-        # response= requests.post(url, data=form_data, headers=get_headers())
-        # print(response.text)
-        youdao=Youdao('我们')
-        print(youdao.fanyi())
+    while(True):
+        i=input("please input :")
+        youdao=Youdao(i)
+        print("fanyi:  "youdao.fanyi())
