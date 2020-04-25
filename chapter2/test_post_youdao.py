@@ -1,7 +1,6 @@
 import unittest
 from unittest import mock
 
-from post_youdao import *
 
 class PostYoudaoTest(unittest.TestCase):
     def test_something(self):
